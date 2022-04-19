@@ -1,49 +1,127 @@
-:root{
+:root {
     --blanco: #ffffff;
-    --oscuro:#212121;
-    --primario: #ffc107; 
-    --secundario:#0097a7;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
     --gris: #757575;
 
 
 
 }
-html{
+
+html {
     font-size: 62.5%;
+    box-sizing: border-box
 }
-body{
-    font-size: 16px;/*1rem=10px* ; utilizar en todos los proyectos*/
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    /*1rem=10px* ; utilizar en todos los proyectos*/
     font-family: 'Krub', sans-serif;
 }
-.titulo{
+
+.titulo {
     text-align: center;
     font-size: 3.8rem;
-    
+
 }
- .titulo span{
-    font-size: 2rem; 
+h1{
+    font-size: 3.8rem;
 }
-.contenedor{
-    width: 120rem;
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 120rem;/* utilizar máximo 12 rem con media querie*/
     margin: 0 auto;
 }
-.div-bg{
-    background-color: var(--secundario); 
- 
-    
+.boton{
+background-color: #0097a7;
+color: #ffffff;
+padding: 1rem 3rem;
+margin-top: 1rem;
+font-size: 2rem;
+text-decoration: none; /*eliminar decoración de texto*/
+text-transform: uppercase;/*letras mayúsculas*/
+font-weight: bold;/*texto en negritas*/
+border-radius: .5rem; /*esquina redonda*/
+width: 50%;
+text-align: center;
 }
-.nave-principal{  
+@media (min-width: 768px){ /*para boton tamaño de pantalla*/
+    .boton{
+        width: auto;
+    }
+}
+
+.div-bg {
+    background-color: var(--secundario)
+
+
+}
+
+.nave-principal {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /*con media querie usar columna para panatallas de menores pixeles*/
+
 }
-.nave-principal a{
-   color: #ffffff;
-   text-decoration: none;
-   font-size: 2rem;
-   font-weight: bold;
-   padding: 1rem; 
+
+@media (min-width: 768px) {
+    .nave-principal {
+        flex-direction: row;  /* fila navegador con media querie para pantallas grandes*/
+        justify-content: space-between; /* se utiliza para separar el espacio del nav en pantallas de mayores tamaños*/
+    }
+
+
 }
-.nave-principal a:hover{
+
+.nave-principal a {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.nave-principal a:hover {
     background-color: #ffc107;
     color: #212121;
+}
+.hero{
+    background-image: url(idles\ 2.jpg );
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35rem;
+    position: relative; /* la posición relativa es del padre*/
+}
+.contenido-hero{
+    position: absolute;/*posición absoluta es del hijo*/
+    background-color: rgba(0,0,0,0.7); /*rgba es para sombrear imágen, anterior*/
+    width: 100%;
+    height: 100%;
+    color: #f4f4f4; 
+    display: flex;             /* centrar verticalmente*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ubicacion{
+    display: flex;                   /* se utilizo un div para separar el ícono y la ubicación de la sección, para alinear fuera del contenido hero*/
+   align-items: flex-end;
 }
