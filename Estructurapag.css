@@ -13,7 +13,8 @@ html {
     font-size: 62.5%;
     box-sizing: border-box
 }
-*, *:before, *:after {
+
+*,*:before,*:after {
     box-sizing: inherit;
 }
 
@@ -21,6 +22,8 @@ body {
     font-size: 16px;
     /*1rem=10px* ; utilizar en todos los proyectos*/
     font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--blanco) 100%)
+        /* gradiente color fondo de página, primero de abj a arr, color inicia, color final*/
 }
 
 .titulo {
@@ -28,16 +31,22 @@ body {
     font-size: 3.8rem;
 
 }
-h1{
+
+h1 {
     font-size: 3.8rem;
 }
-h2{
+
+h2 {
     font-size: 2.8rem;
 }
-h3{
+
+h3 {
     font: 1.8rem;
 }
-h1,h2,h3{
+
+h1,
+h2,
+h3 {
     text-align: center;
 }
 
@@ -46,44 +55,64 @@ h1,h2,h3{
 }
 
 .contenedor {
-    max-width: 120rem;/* utilizar máximo 12 rem con media querie*/
+    max-width: 120rem;
+    /* utilizar máximo 12 rem con media querie*/
     margin: 0 auto;
+    /* centrar el texro*/
 }
-.boton{
-background-color: #0097a7;
-color: #ffffff;
-padding: 1rem 3rem;
-margin-top: 1rem;
-font-size: 2rem;
-text-decoration: none; /*eliminar decoración de texto*/
-text-transform: uppercase;/*letras mayúsculas*/
-font-weight: bold;/*texto en negritas*/
-border-radius: .5rem; /*esquina redonda*/
-width: 50%;
-text-align: center;
+
+.boton {
+    background-color: #0097a7;
+    color: #ffffff;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    /*eliminar decoración de texto*/
+    text-transform: uppercase;
+    /*letras mayúsculas*/
+    font-weight: bold;
+    /*texto en negritas*/
+    border-radius: .5rem;
+    /*esquina redonda*/
+    width: 50%;
+    text-align: center;
 }
-@media (min-width: 768px){ /*para boton tamaño de pantalla*/
-    .boton{
+
+@media (min-width: 768px) {
+
+    /*para boton tamaño de pantalla*/
+    .boton {
         width: auto;
     }
 }
 
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(125, 125, 125, 0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(125, 125, 125, 0.54);
+    box-shadow: 0px 5px 15px 0px rgba(125, 125, 125, 0.54);
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
 .div-bg {
     background-color: var(--secundario)
-
-
 }
 
 .nave-principal {
     display: flex;
-    flex-direction: column; /*con media querie usar columna para panatallas de menores pixeles*/
+    flex-direction: column;
+    /*con media querie usar columna para panatallas de menores pixeles*/
 
 }
 
 @media (min-width: 768px) {
     .nave-principal {
-        flex-direction: row;  /* fila navegador con media querie para pantallas grandes*/
-        justify-content: space-between; /* se utiliza para separar el espacio del nav en pantallas de mayores tamaños*/
+        flex-direction: row;
+        /* fila navegador con media querie para pantallas grandes*/
+        justify-content: space-between;
+        /* se utiliza para separar el espacio del nav en pantallas de mayores tamaños*/
     }
 
 
@@ -103,25 +132,39 @@ text-align: center;
     background-color: #ffc107;
     color: #212121;
 }
-.hero{
+
+.hero {
     background-image: url(idles\ 2.jpg );
     background-repeat: no-repeat;
     background-size: cover;
     height: 35rem;
     position: relative; /* la posición relativa es del padre*/
+    margin-bottom: 2rem;
 }
-.contenido-hero{
-    position: absolute;/*posición absoluta es del hijo*/
-    background-color: rgba(0,0,0,0.7); /*rgba es para sombrear imágen, anterior*/
+
+.contenido-hero {
+    position: absolute;
+    /*posición absoluta es del hijo*/
+    background-color: rgba(0, 0, 0, 0.7);
+    /*rgba es para sombrear imágen, anterior*/
     width: 100%;
     height: 100%;
-    color: #f4f4f4; 
-    display: flex;             /* centrar verticalmente*/
+    color: #f4f4f4;
+    display: flex; /* centrar verticalmente*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.ubicacion{
-    display: flex;                   /* se utilizo un div para separar el ícono y la ubicación de la sección, para alinear fuera del contenido hero*/
-   align-items: flex-end;
+
+.ubicacion {
+    display: flex;
+    /* se utilizo un div para separar el ícono y la ubicación de la sección, para alinear fuera del contenido hero*/
+    align-items: flex-end;
+}
+/* servicios*/
+.servicios{/*para que cada columna tenga su propio espacio, debe estar contenida en un section. (medidas, puede tener % 1fr = partes iguales o 33,3% 0 auto*/
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    column-gap: 1.5rem;
 }
